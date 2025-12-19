@@ -1,381 +1,334 @@
-# 🎯 GitHub Repository Setup Guide
+# 🌿 AI-Powered Weed Detection System
 
-## Repository Information
+<div align="center">
 
-### Repository Name
-```
-weed-detection-system
-```
+**A comprehensive deep learning application for automated weed detection in agricultural fields using state-of-the-art YOLO models with supervised, semi-supervised, and self-supervised learning approaches.**
 
-### Repository Title
-```
-🌿 AI-Powered Weed Detection System
-```
+[Demo](#-demo) • [Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [Models](#-models) • [Notebooks](#-notebooks)
 
-### Short Description (for GitHub)
-```
-A comprehensive deep learning application for automated weed detection in agricultural fields using state-of-the-art YOLO models with supervised, semi-supervised, and self-supervised learning approaches.
-```
-
-### Topics/Tags (for GitHub)
-```
-deep-learning
-computer-vision
-yolo
-object-detection
-agriculture
-weed-detection
-streamlit
-pytorch
-machine-learning
-artificial-intelligence
-precision-agriculture
-self-supervised-learning
-semi-supervised-learning
-image-processing
-video-processing
-```
+</div>
 
 ---
 
-## 📸 Screenshots to Take
+## 📋 Table of Contents
 
-Create a `screenshots/` folder and take the following screenshots:
-
-### 1. **demo.gif** (Optional but recommended)
-- Record a screen recording of the entire detection process
-- Show: uploading image → clicking detect → viewing results with animations
-- Tools: Use [ScreenToGif](https://www.screentogif.com/) or [LICEcap](https://www.cockos.com/licecap/)
-- Duration: 10-20 seconds
-- **What to capture**: Full workflow from start to finish
-
-### 2. **main_interface.png**
-- Screenshot of the app when first opened
-- **What to capture**: 
-  - App header "🌿 Weed Detection System"
-  - Subtitle text
-  - Both tabs visible: "🔍 Detection" and "📊 Kaggle Notebooks"
-  - Model selection dropdown (closed)
-  - Upload section visible
-  - Before any detection
-
-### 3. **model_selection.png**
-- Screenshot showing model selection dropdown expanded
-- **What to capture**:
-  - Dropdown menu open showing all 6 models
-  - Model descriptions visible
-  - The info box showing model type and description
-
-### 4. **detection_results.png**
-- Screenshot after running detection on an image
-- **What to capture**:
-  - Original image on the left
-  - Detected image on the right with bounding boxes
-  - Confidence scores visible on detection boxes
-  - "Total Weeds Detected" metric showing
-
-### 5. **statistics_dashboard.png**
-- Screenshot of the metrics section
-- **What to capture**:
-  - All 4 metrics: Total Detections, Avg Confidence, Max Confidence, Min Confidence
-  - The "📊 Detection Statistics" header visible
-
-### 6. **confidence_charts.png**
-- Screenshot showing the visualization charts
-- **What to capture**:
-  - Confidence Score Distribution (histogram)
-  - Confidence Scores Across Detections (line chart)
-  - Confidence Range Breakdown (bar chart)
-  - Detection Area Distribution (histogram)
-  - Try to capture 2-3 charts in one screenshot
-
-### 7. **kaggle_notebooks.png**
-- Screenshot of the Kaggle Notebooks tab
-- **What to capture**:
-  - All 6 models listed with their names
-  - "Open Notebook" buttons visible
-  - Model descriptions visible
-  - The tip section at the bottom
+- [Overview](#-overview)
+- [Demo](#-demo)
+- [Features](#-features)
+- [Models](#-models)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [Project Structure](#-project-structure)
+- [Notebooks](#-notebooks)
+- [Technologies Used](#-technologies-used)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Contact](#-contact)
 
 ---
 
-## 📂 Folder Structure to Create
+## 🌟 Overview
+
+This project implements an end-to-end weed detection system using advanced computer vision techniques and deep learning models. The system provides real-time detection capabilities for both images and videos, with comprehensive analytics and visualizations.
+
+### Key Highlights
+
+- 🎯 **6 Pre-trained Models**: Choose from supervised, semi-supervised, and self-supervised learning approaches
+- 📸 **Multi-format Support**: Process both images (JPG, PNG) and videos (MP4, AVI, MOV)
+- 📊 **Rich Analytics**: Detailed statistics, interactive charts, and confidence metrics
+- 🚀 **Easy to Use**: User-friendly web interface built with Streamlit
+- 🔬 **Research-backed**: All models trained on comprehensive datasets with Kaggle notebooks included
+
+---
+
+
+## ✨ Features
+
+### Core Functionality
+
+- ✅ **Multiple Model Selection**: 6 different pre-trained models with varying architectures
+- ✅ **Real-time Detection**: Fast inference on images and videos
+- ✅ **Confidence Thresholding**: Adjustable confidence levels for detection sensitivity
+- ✅ **Sample Image Support**: Automatic fallback to sample image for quick testing
+- ✅ **Video Processing**: Frame-by-frame detection with annotated output
+
+### Analytics & Visualization
+
+- 📊 **Interactive Charts**: Plotly-powered visualizations
+  - Confidence score distribution (histogram)
+  - Confidence trends across detections (line chart)
+  - Confidence range breakdown (bar chart)
+  - Detection area distribution (histogram)
+- 📈 **Statistical Metrics**:
+  - Total detections count
+  - Average, maximum, and minimum confidence scores
+  - Bounding box area statistics
+- 📥 **Data Export**: Download detection data as CSV
+- 🎥 **Video Export**: Download annotated videos
+
+### User Interface
+
+- 🎨 **Clean Design**: Modern, intuitive interface with no sidebar clutter
+- 📱 **Responsive Layout**: Works on desktop and tablet devices
+- 🔗 **Kaggle Integration**: Direct links to all training notebooks
+- 📚 **Comprehensive Documentation**: Built-in model descriptions and help text
+
+---
+
+## 🤖 Models
+
+This repository includes 6 pre-trained models covering different learning paradigms:
+
+### Supervised Learning Models
+
+| Model | Description | Use Case |
+|-------|-------------|----------|
+| **YOLOv10n** | Fast and efficient baseline model | Quick detection with good accuracy |
+| **YOLOv11n** | Improved architecture with better accuracy | Balanced speed and performance |
+| **YOLOv12n** | Latest YOLO version with enhanced performance | Best accuracy for supervised approach |
+
+### Semi-Supervised Learning
+
+| Model | Description | Use Case |
+|-------|-------------|----------|
+| **Soft Teacher (Student)** | Uses pseudo-labeling techniques on unlabeled data | Leverages both labeled and unlabeled data |
+
+### Self-Supervised Learning
+
+| Model | Description | Use Case |
+|-------|-------------|----------|
+| **DINOv3+YOLOv12n** | DINO self-supervised pre-training + YOLO | Strong feature representations |
+| **BYOL+YOLOv12n** | Bootstrap Your Own Latent + YOLO architecture | Robust learned features without labels |
+
+All models are optimized for weed detection with `.pt` weight files included in the `weights/` directory.
+
+---
+
+## 🚀 Installation
+
+### Prerequisites
+
+- Python 3.8 or higher
+- pip package manager
+- Git (for cloning the repository)
+
+### Step 1: Clone the Repository
 
 ```bash
-# Create all necessary folders
-mkdir screenshots
-mkdir notebooks
-mkdir sample_images
-mkdir docs
+git clone https://github.com/yourusername/weed-detection-system.git
+cd weed-detection-system
+```
 
-# Move your sample image
-mv sample_image.png sample_images/
+### Step 2: Create Virtual Environment (Recommended)
+
+```bash
+# Using venv
+python -m venv venv
+
+# Activate on Windows
+venv\Scripts\activate
+
+# Activate on macOS/Linux
+source venv/bin/activate
+```
+
+### Step 3: Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Step 4: Verify Installation
+
+```bash
+# Check if all packages are installed
+pip list
 ```
 
 ---
 
-## 📝 Additional Files to Create
+## 💻 Usage
 
-### 1. **LICENSE** (MIT License)
-Create a file named `LICENSE`:
+### Running the Application
 
-```
-MIT License
-
-Copyright (c) 2025 [Your Name]
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+```bash
+streamlit run app.py
 ```
 
-### 2. **docs/CONTRIBUTING.md**
-```markdown
-# Contributing to Weed Detection System
+The application will automatically open in your default browser at `http://localhost:8501`
 
-Thank you for considering contributing to this project! 
+### Using the Application
 
-## How to Contribute
+#### 1. **Detection Tab**
+
+**Quick Test (No Upload):**
+1. Select a model from the dropdown menu
+2. Click **"🚀 Detect Weeds"** button
+3. The app will use the sample image for detection
+
+**Custom Image/Video:**
+1. Select a model from the dropdown menu
+2. Choose input type: **Image** or **Video**
+3. Click **"Browse files"** to upload your media
+4. Adjust **confidence threshold** (optional, default: 0.25)
+5. Click **"🚀 Detect Weeds"**
+6. View results with side-by-side comparison
+
+#### 2. **Kaggle Notebooks Tab**
+
+- Browse all training notebooks
+- Click **"Open Notebook"** to view detailed implementations
+- Explore model architectures, training procedures, and evaluation metrics
+
+### Configuration
+
+You can modify the confidence threshold (0.1 - 1.0) to adjust detection sensitivity:
+- **Lower threshold (0.1-0.3)**: More detections, may include false positives
+- **Medium threshold (0.3-0.6)**: Balanced detection
+- **Higher threshold (0.6-1.0)**: Fewer but more confident detections
+
+---
+
+## 📁 Project Structure
+
+```
+weed-detection-system/
+│
+├── app.py                          # Main Streamlit application
+├── requirements.txt                # Python dependencies
+├── README.md                       # Project documentation
+├── .gitignore                      # Git ignore rules
+│
+├── utils/                          # Utility modules
+│   ├── __init__.py                # Package initialization
+│   ├── config.py                  # Configuration and model settings
+│   ├── detector.py                # YOLO detection logic
+│   └── visualizer.py              # Visualization and statistics
+│
+├── weights/                        # Pre-trained model weights
+│   ├── YOLOv10n_weed.pt
+│   ├── YOLOv11n_weed.pt
+│   ├── YOLOv12n_weed.pt
+│   ├── Soft Teacher (Student)_weed.pt
+│   ├── DINOv3+YOLOv12n_weed.pt
+│   └── BYOL+YOLOv12n_weed.pt
+│
+├── notebooks/                      # Jupyter notebooks
+│   ├── YOLOv10n_training.ipynb
+│   ├── YOLOv11n_training.ipynb
+│   ├── YOLOv12n_training.ipynb
+│   ├── Soft_Teacher_training.ipynb
+│   ├── DINOv3_YOLOv12n_training.ipynb
+│   └── BYOL_YOLOv12n_training.ipynb
+└── sample_image.png               # Sample image for testing
+```
+
+---
+
+## 📓 Notebooks
+
+All training notebooks are available both in this repository and on Kaggle:
+
+### Supervised Learning
+
+| Notebook | Repository | Kaggle Link |
+|----------|-----------|-------------|
+| YOLOv10n Training | [View](notebooks/YOLOv10n_training.ipynb) | [Open in Kaggle](https://www.kaggle.com/code/saifkhancse/weed-detection-using-supervised-learning-yolov10n) |
+| YOLOv11n Training | [View](notebooks/YOLOv11n_training.ipynb) | [Open in Kaggle](https://www.kaggle.com/code/stone369/weed-detection-using-supervised-learning-yolov11n) |
+| YOLOv12n Training | [View](notebooks/YOLOv12n_training.ipynb) | [Open in Kaggle](https://www.kaggle.com/code/saifkhancse/weed-detection-using-supervised-learning-yolov12n) |
+
+### Semi-Supervised Learning
+
+| Notebook | Repository | Kaggle Link |
+|----------|-----------|-------------|
+| Soft Teacher Training | [View](notebooks/Soft_Teacher_training.ipynb) | [Open in Kaggle](https://www.kaggle.com/code/saifkhancse/weed-detection-semi-sup-learning-soft-teacher) |
+
+### Self-Supervised Learning
+
+| Notebook | Repository | Kaggle Link |
+|----------|-----------|-------------|
+| DINOv3+YOLOv12n Training | [View](notebooks/DINOv3_YOLOv12n_training.ipynb) | [Open in Kaggle](https://www.kaggle.com/code/saifkhancse/weed-detection-using-ssl-dinov3-yolov12n) |
+| BYOL+YOLOv12n Training | [View](notebooks/BYOL_YOLOv12n_training.ipynb) | [Open in Kaggle](https://www.kaggle.com/code/saifkhancse/weed-detection-using-ssl-byol-yolov12n) |
+
+Each notebook contains:
+- Data preprocessing steps
+- Model architecture details
+- Training configuration
+- Evaluation metrics
+- Visualization of results
+
+---
+
+
+
+## 🛠️ Technologies Used
+
+### Core Technologies
+
+- **[Python 3.8+](https://www.python.org/)**: Primary programming language
+- **[Streamlit](https://streamlit.io/)**: Web application framework
+- **[Ultralytics YOLO](https://github.com/ultralytics/ultralytics)**: Object detection framework
+- **[OpenCV](https://opencv.org/)**: Computer vision library
+- **[PyTorch](https://pytorch.org/)**: Deep learning framework (via Ultralytics)
+
+### Data & Visualization
+
+- **[Pandas](https://pandas.pydata.org/)**: Data manipulation and analysis
+- **[NumPy](https://numpy.org/)**: Numerical computing
+- **[Plotly](https://plotly.com/)**: Interactive visualizations
+- **[Pillow](https://python-pillow.org/)**: Image processing
+
+### Model Architectures
+
+- **YOLOv10/v11/v12**: Latest YOLO object detection models
+- **Soft Teacher**: Semi-supervised learning framework
+- **DINOv3**: Self-supervised vision transformer
+- **BYOL**: Bootstrap Your Own Latent self-supervised learning
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please follow these steps:
 
 1. Fork the repository
-2. Create a new branch (`git checkout -b feature/amazing-feature`)
-3. Make your changes
-4. Commit your changes (`git commit -m 'Add amazing feature'`)
-5. Push to the branch (`git push origin feature/amazing-feature`)
-6. Open a Pull Request
-
-## Code Style
-
-- Follow PEP 8 guidelines for Python code
-- Add comments for complex logic
-- Update documentation when adding new features
-
-## Reporting Bugs
-
-- Use the GitHub issue tracker
-- Describe the bug in detail
-- Include steps to reproduce
-- Add screenshots if applicable
-
-## Feature Requests
-
-- Use the GitHub issue tracker
-- Clearly describe the feature
-- Explain why it would be useful
-```
-
-### 3. **docs/API.md**
-```markdown
-# API Documentation
-
-## WeedDetector Class
-
-### `__init__(model_path, confidence_threshold=0.25)`
-Initialize the detector with a model.
-
-**Parameters:**
-- `model_path` (str): Path to the YOLO model weights
-- `confidence_threshold` (float): Minimum confidence for detections
-
-### `detect_image(image_path)`
-Detect weeds in an image.
-
-**Returns:**
-- Dictionary with detection results
-
-### `detect_video(video_path)`
-Detect weeds in a video.
-
-**Returns:**
-- Dictionary with detection results for all frames
-```
-
-### 4. **docs/MODELS.md**
-```markdown
-# Model Documentation
-
-## Model Architectures
-
-### YOLOv10n
-- Architecture: Nano variant of YOLOv10
-- Parameters: ~2.5M
-- Input size: 640x640
-- Best for: Fast inference
-
-### YOLOv11n
-- Architecture: Nano variant of YOLOv11
-- Parameters: ~2.8M
-- Input size: 640x640
-- Best for: Balanced performance
-
-### YOLOv12n
-- Architecture: Nano variant of YOLOv12
-- Parameters: ~3.0M
-- Input size: 640x640
-- Best for: High accuracy
-
-### Soft Teacher (Student)
-- Architecture: Semi-supervised YOLO
-- Uses pseudo-labeling
-- Best for: Limited labeled data scenarios
-
-### DINOv3+YOLOv12n
-- Architecture: Self-supervised pre-training + YOLO
-- Pre-training: DINOv3
-- Best for: Strong feature learning
-
-### BYOL+YOLOv12n
-- Architecture: Bootstrap Your Own Latent + YOLO
-- Pre-training: BYOL
-- Best for: Robust features without labels
-```
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ---
 
-## 🚀 Steps to Create GitHub Repository
+## 📄 License
 
-### Step 1: Prepare Files
-```bash
-# Make sure all files are in place
-ls -la
-
-# Should see:
-# - app.py
-# - requirements.txt
-# - README.md
-# - LICENSE
-# - .gitignore
-# - utils/
-# - weights/
-# - notebooks/
-# - screenshots/
-# - sample_images/
-# - docs/
-```
-
-### Step 2: Initialize Git
-```bash
-git init
-git add .
-git commit -m "Initial commit: Complete weed detection system"
-```
-
-### Step 3: Create Repository on GitHub
-1. Go to [GitHub](https://github.com)
-2. Click "New Repository"
-3. **Repository name**: `weed-detection-system`
-4. **Description**: Copy the short description from above
-5. **Visibility**: Public (or Private if you prefer)
-6. **DO NOT** initialize with README (you already have one)
-7. Click "Create repository"
-
-### Step 4: Push to GitHub
-```bash
-# Add remote origin (replace with your GitHub username)
-git remote add origin https://github.com/yourusername/weed-detection-system.git
-
-# Push to GitHub
-git branch -M main
-git push -u origin main
-```
-
-### Step 5: Add Topics/Tags
-1. Go to your repository on GitHub
-2. Click the gear icon ⚙️ next to "About"
-3. Add the topics listed above
-4. Save changes
-
-### Step 6: Configure Repository Settings
-1. Go to **Settings** → **General**
-2. Enable **Issues**
-3. Enable **Discussions** (optional)
-4. Under **Features**, enable:
-   - Wikis (optional)
-   - Projects (optional)
-
-### Step 7: Add GitHub Actions (Optional)
-Create `.github/workflows/test.yml` for automated testing:
-
-```yaml
-name: Test Application
-
-on: [push, pull_request]
-
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.9
-    - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
-    - name: Run tests
-      run: |
-        python -m pytest tests/
-```
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 📋 Checklist Before Publishing
+## 👥 Contact
 
-- [ ] All code files are present and working
-- [ ] README.md is complete with all sections
-- [ ] Screenshots are captured and in `screenshots/` folder
-- [ ] LICENSE file is added
-- [ ] .gitignore is properly configured
-- [ ] Notebooks are in `notebooks/` folder
-- [ ] Model weights are in `weights/` folder (or document how to download)
-- [ ] Sample images are in `sample_images/` folder
-- [ ] All documentation files in `docs/` folder
-- [ ] Repository description and topics are added
-- [ ] All links in README are working
-- [ ] Personal information (name, email, GitHub username) is updated
+**Your Name**
+- GitHub: [@yourusername](https://github.com/yourusername)
+- Email: your.email@example.com
+- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
+
+**Project Link**: [https://github.com/yourusername/weed-detection-system](https://github.com/yourusername/weed-detection-system)
 
 ---
 
-## 🎨 Optional Enhancements
+## 🙏 Acknowledgments
 
-### Add Badges
-At the top of README.md, you can add more badges:
-
-```markdown
-![GitHub stars](https://img.shields.io/github/stars/yourusername/weed-detection-system?style=social)
-![GitHub forks](https://img.shields.io/github/forks/yourusername/weed-detection-system?style=social)
-![GitHub issues](https://img.shields.io/github/issues/yourusername/weed-detection-system)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/yourusername/weed-detection-system)
-```
-
-### Create a GitHub Pages Site
-1. Go to **Settings** → **Pages**
-2. Select **main** branch
-3. Select **docs** folder
-4. Your documentation will be available at `https://yourusername.github.io/weed-detection-system`
+- [Ultralytics](https://github.com/ultralytics/ultralytics) for the YOLO implementation
+- [Streamlit](https://streamlit.io/) for the amazing web framework
+- [Kaggle](https://www.kaggle.com/) for providing computational resources
+- Agricultural research community for dataset contributions
 
 ---
 
-## 📞 Need Help?
+<div align="center">
 
-If you need any clarification or run into issues:
-1. Check the [GitHub documentation](https://docs.github.com/)
-2. Search for similar projects on GitHub for inspiration
-3. Ask in GitHub Discussions or create an issue
+### ⭐ Star this repository if you find it helpful!
 
-Good luck with your repository! 🌿✨
+Made with ❤️ by [Your Name](https://github.com/yourusername)
+
+</div>
